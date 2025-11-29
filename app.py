@@ -17,7 +17,7 @@ try:
         raise ValueError("GOOGLE_API_KEY não definida")
         
     genai.configure(api_key=gemini_api_key)
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     logger.info("Modelo GenAI configurado com sucesso.")
 except Exception as e:
     logger.error(f"Erro ao configurar a API do Gemini: {e}")

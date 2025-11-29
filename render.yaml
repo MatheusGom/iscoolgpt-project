@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: iscoolgpt
+    env: docker
+    plan: free
+    region: oregon 
+    branch: main
+    
+    healthCheckPath: /health
+    
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false

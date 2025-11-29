@@ -1,12 +1,25 @@
 services:
   - type: web
-    name: iscoolgpt
+    name: iscoolgpt-prod
     env: docker
     plan: free
-    region: oregon 
+    region: oregon
     branch: main
-    
     healthCheckPath: /health
+    autoDeploy: true
+    
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+
+  - type: web
+    name: iscoolgpt-staging
+    env: docker
+    plan: free
+    region: oregon
+    branch: staging 
+    healthCheckPath: /health
+    autoDeploy: true
     
     envVars:
       - key: GOOGLE_API_KEY
